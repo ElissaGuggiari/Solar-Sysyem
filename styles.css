@@ -1,0 +1,287 @@
+/* INITIAL RULES */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    /* this is to enable the 100% height on the body element */
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    background-color: black;
+}
+
+/* UNIVERSE */
+.universe {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    background-color: black;
+    background-image: radial-gradient(rgb(80, 80, 80), rgba(255,255,255,.2) 1px, transparent 4px), radial-gradient(rgb(80, 79, 79), rgba(255,255,255,.15) 1px, transparent 3px), radial-gradient(rgb(98, 98, 98), rgba(255,255,255,.1) 1px, transparent 4px), radial-gradient(rgba(70, 70, 70, 0.4), rgba(255,255,255,.1) 2px, transparent 3px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+    background-position: 0 0, 30px 63px, 133px 273px, 73px 103px;
+}
+
+/* SUN */
+.sun {
+    width: 10vh;
+    height: 10vh;
+
+    position: absolute;
+    left: calc(50% - 5vh);
+    top: calc(50% - 5vh);
+
+    animation: 3s infinite alternate sunRadiation;
+
+    background-color: rgb(255, 213, 0);
+    background-image: radial-gradient(circle at 100%, rgba(255, 0, 0, 0.5), transparent);
+    border-radius: 50%;
+}
+
+/* MERCURY */
+.mercury {
+    width: 7vh;
+    height: 7vh;
+
+    position: absolute;
+    left: 20vh;
+    transform-origin: -15vh 5vh;
+
+    background-color: rgb(179, 157, 135);
+    background-image: radial-gradient(circle at -70%, rgba(250, 250, 200, 0.5), transparent);
+    border-radius: 50%;
+
+    animation-name: mercuryRotation;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/* VENUS */
+.venus {
+    width: 8vh;
+    height: 8vh;
+
+    position: absolute;
+    left: 30vh;
+    transform-origin: -25vh 5vh;
+
+    background-color: rgb(238, 197, 113);
+    background-image: radial-gradient(circle at -70%, rgba(250, 250, 200, 0.5), transparent);
+    border-radius: 50%;
+
+    animation-name: venusRotation;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/* EARTH */
+.earth {
+    width: 10vh;
+    height: 10vh;
+
+    position: absolute;
+    left: 40vh;
+    transform-origin: -35vh 5vh;
+
+    background-color: rgb(30, 144, 255);
+    background-image: radial-gradient(circle at -70%, rgba(250, 250, 200, 0.5), transparent);
+    border-radius: 50%;
+
+    animation-name: earthRotation;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/* MARS */
+.mars {
+    width: 6vh;
+    height: 6vh;
+
+    position: absolute;
+    left: 50vh;
+    transform-origin: -45vh 5vh;
+
+    background-color: rgb(213, 85, 48);
+    background-image: radial-gradient(circle at -70%, rgba(250, 250, 200, 0.5), transparent);
+    border-radius: 50%;
+
+    animation-name: marsRotation;
+    animation-duration: 3.8s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/* JUPITER */
+.jupiter {
+    width: 20vh;
+    height: 20vh;
+
+    position: absolute;
+    left: 60vh;
+    transform-origin: -55vh 5vh;
+
+    background-color: rgb(252, 188, 104);
+    background-image: radial-gradient(circle at -70%, rgba(250, 250, 200, 0.5), transparent);
+    border-radius: 50%;
+
+    animation-name: jupiterRotation;
+    animation-duration: 25s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/* SATURN */
+.saturn {
+    width: 16vh;
+    height: 16vh;
+
+    position: absolute;
+    left: 80vh;
+    transform-origin: -75vh 5vh;
+
+    background-color: rgb(234, 213, 136);
+    background-image: radial-gradient(circle at -70%, rgba(250, 250, 200, 0.5), transparent);
+    border-radius: 50%;
+
+    animation-name: saturnRotation;
+    animation-duration: 60s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/* URANUS */
+.uranus {
+    width: 16vh;
+    height: 16vh;
+
+    position: absolute;
+    left: 100vh;
+    transform-origin: -95vh 5vh;
+
+    background-color: rgb(154, 219, 230);
+    background-image: radial-gradient(circle at -70%, rgba(250, 250, 200, 0.5), transparent);
+    border-radius: 50%;
+
+    animation-name: uranusRotation;
+    animation-duration: 120s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/* NEPTUNE */
+.neptune {
+    width: 14vh;
+    height: 14vh;
+
+    position: absolute;
+    left: 120vh;
+    transform-origin: -115vh 5vh;
+
+    background-color: rgb(77, 116, 161);
+    background-image: radial-gradient(circle at -70%, rgba(250, 250, 200, 0.5), transparent);
+    border-radius: 50%;
+
+    animation-name: neptuneRotation;
+    animation-duration: 240s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/* ANIMATIONS */
+@keyframes sunRadiation {
+    from {
+        box-shadow: 2px 2px 20px yellow;
+    }
+    to {
+        box-shadow: -2px -2px 20px red;
+    }
+}
+
+@keyframes mercuryRotation {
+    from {
+        transform: scale(.5) rotate(0);
+    }
+    to {
+        transform: scale(.5) rotate(1turn);
+    }
+}
+
+@keyframes venusRotation {
+    from {
+        transform: scale(.5) rotate(0);
+    }
+    to {
+        transform: scale(.5) rotate(1turn);
+    }
+}
+
+@keyframes earthRotation {
+    from {
+        transform: scale(.5) rotate(0);
+    }
+    to {
+        transform: scale(.5) rotate(1turn);
+    }
+}
+
+@keyframes marsRotation {
+    from {
+        transform: scale(.5) rotate(0);
+    }
+    to {
+        transform: scale(.5) rotate(1turn);
+    }
+}
+
+@keyframes jupiterRotation {
+    from {
+        transform: scale(.5) rotate(0);
+    }
+    to {
+        transform: scale(.5) rotate(1turn);
+    }
+}
+
+@keyframes saturnRotation {
+    from {
+        transform: scale(.5) rotate(0);
+    }
+    to {
+        transform: scale(.5) rotate(1turn);
+    }
+}
+
+@keyframes uranusRotation {
+    from {
+        transform: scale(.5) rotate(0);
+    }
+    to {
+        transform: scale(.5) rotate(1turn);
+    }
+}
+
+@keyframes neptuneRotation {
+    from {
+        transform: scale(.5) rotate(0);
+    }
+    to {
+        transform: scale(.5) rotate(1turn);
+    }
+}
